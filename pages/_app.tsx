@@ -1,8 +1,14 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import type { AppProps } from "next/app";
+import "../styles/global.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  const handleGoogleLogin = () => {
+    const googleLoginUrl = `http://localhost:5000/api/v1/login/google`;
+
+    window.open(googleLoginUrl, "_blank", "width=500,height=600");
+  };
+
+  return <Component {...pageProps} handleGoogleLogin={handleGoogleLogin} />;
 }
 
-export default MyApp
+export default MyApp;
