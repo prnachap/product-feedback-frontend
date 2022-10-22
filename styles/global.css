@@ -24,4 +24,10 @@
   .btn-danger {
     @apply btn-base bg-jasper rounded-lg text-white hover:bg-jasper-light transition-all;
   }
+  .btn-back-primary {
+    @apply btn-base flex items-center bg-transparent hover:underline text-dark-blue-gray border-none;
+  }
+  .btn-back-secondary {
+    @apply btn-base flex items-center justify-center rounded-lg text-white bg-american-blue-200 hover:underline;
+  }
 }
