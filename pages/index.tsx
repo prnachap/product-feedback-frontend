@@ -1,19 +1,26 @@
 import type { NextPage } from "next";
 import { useState } from "react";
 import Head from "next/head";
-import StyledButton from "../components/Button/StyledButton";
-import Chip from "../components/Chip/Chip";
-import DropDownMenu from "../components/DropdownMenu/MenuList";
-import MenuButton from "../components/DropdownMenu/MenuButton";
+import CustomInput from "../components/CustomInput/CustomInput";
+import { Formik, Form, FormikProps } from "formik";
+import CustomSelect from "../components/CustomInput/CustomSelect";
 
+interface Values {
+  name: string;
+  menu: string;
+}
 const Home: NextPage = () => {
   const [selectedMenu, setSelectedMenu] = useState<string>("one");
   const [openMenu, setOpenMenu] = useState(false);
   const handleMenu = (selectedMenu: string) => {
     setSelectedMenu(selectedMenu);
   };
+  const [value, setValue] = useState("");
   const handleMenuOpen = () => setOpenMenu(!openMenu);
   // console.log("checking", openMenu);
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(event.target.value);
+  };
   return (
     <div>
       <Head>
@@ -25,20 +32,30 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="card">
-        <Chip>
-          <span>a</span>
-          <span>a</span>
-        </Chip>
         <div style={{ margin: "100px" }}>
-          <MenuButton
-            title={selectedMenu}
-            isMenuOpen={openMenu}
-            handleMenu={handleMenuOpen}
-          />
-          <DropDownMenu
-            listItems={["one", "tow"]}
-            getSelectedMenu={handleMenu}
-          />
+          <Formik
+            initialValues={{ name: "", menu: "one" }}
+            onSubmit={(values) => {
+              console.log("my values", values);
+            }}
+          >
+            {(props: FormikProps<Values>) => (
+              <Form>
+                <CustomInput
+                  name="name"
+                  type="text"
+                  description="its my test and my world"
+                  label="First Name"
+                />
+                <CustomSelect
+                  name="menu"
+                  type="text"
+                  label="second Name"
+                  itemLists={["one", "two", "three"]}
+                />
+              </Form>
+            )}
+          </Formik>
         </div>
       </main>
     </div>

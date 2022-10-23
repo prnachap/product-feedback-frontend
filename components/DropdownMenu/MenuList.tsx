@@ -1,37 +1,65 @@
-import { useState } from "react";
+import { motion } from "framer-motion";
 import { isEqual } from "lodash";
 import CheckIcon from "../../public/assets/shared/icon-check.svg";
 
-type MenuListProps = {
-  listItems: string[];
-  getSelectedMenu: (selectedMenu: string) => void;
+type MenuListProps<T> = {
+  listItems: T[];
+  value: T;
+  onChange: (value: T) => void;
 };
 
-const MenuList: React.FC<MenuListProps> = ({ listItems, getSelectedMenu }) => {
-  const [selectedMenu, setSelectedMenu] = useState<number | null>(null);
-  const handleSelectedMenu = (selectedIndex: number) => {
-    setSelectedMenu(selectedIndex);
-    getSelectedMenu(listItems?.[selectedIndex]);
-  };
+const menuListVariant = {
+  initial: {
+    opacity: 0,
+    y: "-50%",
+  },
+  final: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "tween",
+      duration: 0.3,
+    },
+  },
+  exit: {
+    opacity: 0,
+    y: "-50%",
+    transition: {
+      type: "tween",
+      duration: 0.3,
+    },
+  },
+};
 
-  const renderListItems = (listItems: string[]) => {
-    return listItems?.map((item, index) => (
+function MenuList<T extends string>({
+  listItems,
+  value,
+  onChange,
+}: MenuListProps<T>) {
+  const renderListItems = (listItems: T[]) => {
+    return listItems?.map((item) => (
       <li
         key={item}
         className="flex justify-between items-center border-b-[1px] border-solid border-american-blue-100 border-opacity-10 last:border-none px-6 py-3 capitalize cursor-pointer hover:text-purple-1000 transition-all"
-        onClick={() => handleSelectedMenu(index)}
+        onClick={() => onChange(item)}
       >
         {item}
-        {isEqual(selectedMenu, index) && <CheckIcon />}
+        {isEqual(value, item) && <CheckIcon />}
       </li>
     ));
   };
 
   return (
-    <ul className="max-w-[255px]  rounded-lg bg-white shadow-xl">
+    <motion.ul
+      initial="initial"
+      animate="final"
+      exit="exit"
+      variants={menuListVariant}
+      className="max-w-full  rounded-lg bg-white shadow-xl mt-4"
+    >
       {renderListItems(listItems)}
-    </ul>
+    </motion.ul>
   );
-};
+}
 
 export default MenuList;
