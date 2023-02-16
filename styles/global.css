@@ -23,7 +23,7 @@
 
 @layer utilities {
   .btn-base {
-    @apply text-sm font-bold px-[52px] py-2;
+    @apply text-[0.8125rem] font-bold px-[52px] py-2 md:text-sm;
   }
   .btn-primary {
     @apply btn-base bg-purple-1000 rounded-lg text-white hover:bg-purple-light transition-all;

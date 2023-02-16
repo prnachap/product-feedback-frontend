@@ -7,15 +7,15 @@ import { sortBy } from "../../constants";
 const CreateFeedbackBar: React.FC = () => {
   return (
     <div className="w-full relative">
-      <div className="flex items-center justify-between bg-american-blue-200 p-6 rounded-lg min-h-[5rem] max-h-[5rem]">
+      <div className="flex items-center justify-between px-3 gap-2 min-h-[5rem] max-h-[5rem] bg-american-blue-200 md:p-6 md:rounded-lg">
         <div className="flex gap-4 items-center">
-          <BlubIcon />
-          <h2 className="text-white">{`${6} Suggestions`}</h2>
-          <div className="ml-[38px]">
-            <MenuButton<string, string> title="Most Upvotes" options={sortBy} />
+          <BlubIcon className="hidden md:inline-block" />
+          <h2 className="text-white hidden md:inline-block">{`${6} Suggestions`}</h2>
+          <div className="md:ml-[38px]">
+            <MenuButton<string> options={sortBy} />
           </div>
         </div>
-        <div className="flex items-start">
+        <div>
           <StyledButton className="flex items-center gap-2 btn-primary">
             <PlusIcon />
             <span>Add Feedback</span>

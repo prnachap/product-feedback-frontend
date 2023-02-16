@@ -4,16 +4,14 @@ import { useClickOutside } from "../../hooks/useClickOutside";
 import AnimatedDropdownIcon from "../AnimatedSvgIcons/AnimatedDropdownIcon";
 import MenuList from "./MenuList";
 
-type SortByDropdownProps<T, Y> = {
-  title: T;
-  options: Y[];
+type SortByDropdownProps<T> = {
+  options: T[];
   children?: React.ReactNode;
 };
 
-function SortByDropdown<T extends string, Y extends string | number>({
-  title,
+function SortByDropdown<T extends string | number>({
   options,
-}: SortByDropdownProps<T, Y>) {
+}: SortByDropdownProps<T>) {
   const [selectedMenuOption, setSelectedMenuOption] = useState(options[0]);
   const [openMenu, setOpenMenu] = useState(false);
   const dropdownRef = useRef(null);
@@ -24,7 +22,7 @@ function SortByDropdown<T extends string, Y extends string | number>({
   const animate = openMenu ? "animate" : "initial";
 
   const handleMenu = () => setOpenMenu(!openMenu);
-  const handleMenuList = (option: Y) => {
+  const handleMenuList = (option: T) => {
     setSelectedMenuOption(option);
     setOpenMenu(false);
   };
@@ -33,8 +31,8 @@ function SortByDropdown<T extends string, Y extends string | number>({
     return (
       <AnimatePresence>
         {openMenu && (
-          <div className="w-[200px] absolute top-20 z-1">
-            <MenuList<Y>
+          <div className="w-[200px] absolute top-12 z-1">
+            <MenuList<T>
               value={selectedMenuOption}
               onChange={handleMenuList}
               listItems={options}
@@ -48,11 +46,11 @@ function SortByDropdown<T extends string, Y extends string | number>({
   return (
     <div className="relative" ref={dropdownRef}>
       <button
-        className="flex items-center px-4 py-6 bg-american-blue-200 text-white text-sm rounded-lg"
+        className="flex items-center bg-american-blue-200 text-white text-sm rounded-lg"
         onClick={handleMenu}
       >
         <span className="font-normal">Sort By:</span>
-        <span className="font-bold ml-1">{title}</span>
+        <span className="font-bold ml-1 capitalize">{selectedMenuOption}</span>
         <AnimatedDropdownIcon animate={animate} />
       </button>
       {renderDropdownList()}

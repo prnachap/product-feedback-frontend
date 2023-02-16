@@ -10,7 +10,7 @@ const RoadmapCard: React.FC = () => {
   };
 
   return (
-    <div className="bg-white flex flex-col gap-6 px-6 pt-[19px] pb-6 max-w-[15.9375rem] rounded-lg">
+    <div className="bg-white flex flex-col gap-6 px-6 pt-[19px] pb-6 w-[15.9375rem] max-w-[15.9375rem] rounded-lg">
       <div className="flex justify-between items-center">
         <h3 className="text-american-blue-100">Roadmap</h3>
         <Link href="/roadmap">

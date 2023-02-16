@@ -9,7 +9,7 @@ const TagsCard: React.FC = () => {
   };
 
   return (
-    <div className="bg-white max-w-[15.9375rem] p-6 flex flex-wrap gap-2 rounded-lg">
+    <div className="bg-white w-[15.9375rem] max-w-[15.9375rem] p-6 flex flex-wrap gap-2 rounded-lg">
       {renderTags()}
     </div>
   );
