@@ -4,6 +4,11 @@ import Head from "next/head";
 import CustomInput from "../components/CustomInput/CustomInput";
 import { Formik, Form, FormikProps } from "formik";
 import CustomSelect from "../components/CustomInput/CustomSelect";
+import FeedbackLogo from "../components/LogoCard/FeedbackLogo";
+import TagsCard from "../components/TagsCard/TagsCard";
+import RoadmapCard from "../components/RoadmapCard/RoadmapCard";
+import CreateFeedbackBar from "../components/CreateFeedbackBar.tsx/CreateFeedbackBar";
+import HomePageContainer from "../components/Containers/HomePageContainer";
 
 interface Values {
   name: string;
@@ -32,31 +37,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="card">
-        <div style={{ margin: "100px" }}>
-          <Formik
-            initialValues={{ name: "", menu: "one" }}
-            onSubmit={(values) => {
-              console.log("my values", values);
-            }}
-          >
-            {(props: FormikProps<Values>) => (
-              <Form>
-                <CustomInput
-                  name="name"
-                  type="text"
-                  description="its my test and my world"
-                  label="First Name"
-                />
-                <CustomSelect
-                  name="menu"
-                  type="text"
-                  label="second Name"
-                  itemLists={["one", "two", "three"]}
-                />
-              </Form>
-            )}
-          </Formik>
-        </div>
+        <HomePageContainer />
       </main>
     </div>
   );

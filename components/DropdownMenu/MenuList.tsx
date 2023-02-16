@@ -31,7 +31,7 @@ const menuListVariant = {
   },
 };
 
-function MenuList<T extends string>({
+function MenuList<T extends string | number>({
   listItems,
   value,
   onChange,

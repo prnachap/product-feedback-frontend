@@ -7,6 +7,18 @@
     font-family: "Jost", sans-serif;
     background: theme(colors.ghost-white);
   }
+  h1 {
+    @apply text-2xl tracking-tighter font-bold;
+  }
+  h2 {
+    @apply text-xl tracking-tighter font-bold;
+  }
+  h3 {
+    @apply text-lg tracking-tighter font-bold;
+  }
+  h4 {
+    @apply text-sm tracking-tighter font-bold;
+  }
 }
 
 @layer utilities {
@@ -37,5 +49,16 @@
   }
   .input-description {
     @apply block text-sm font-normal text-dark-blue-gray mb-4;
+  }
+
+  .body-one-text {
+    @apply text-base font-normal tracking-normal;
+  }
+
+  .body-two-text {
+    @apply text-[15px] font-normal tracking-normal;
+  }
+  .body-three-text {
+    @apply text-[13px] font-semibold tracking-normal;
   }
 }

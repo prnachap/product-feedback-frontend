@@ -4,7 +4,7 @@ type StyledButtonProps = {
 };
 
 const StyledButton: React.FC<StyledButtonProps> = ({ className, children }) => {
-  return <button className={className ?? "btn-primary"}>{children}</button>;
+  return <button className={className}>{children}</button>;
 };
 
 export default StyledButton;
