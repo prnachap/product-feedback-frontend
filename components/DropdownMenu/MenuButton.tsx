@@ -31,7 +31,7 @@ function SortByDropdown<T extends string | number>({
     return (
       <AnimatePresence>
         {openMenu && (
-          <div className="w-[200px] absolute top-12 z-1">
+          <div className="w-[200px] absolute top-12 -z-10">
             <MenuList<T>
               value={selectedMenuOption}
               onChange={handleMenuList}
@@ -46,12 +46,14 @@ function SortByDropdown<T extends string | number>({
   return (
     <div className="relative" ref={dropdownRef}>
       <button
-        className="flex items-center bg-american-blue-200 text-white text-sm rounded-lg"
+        className="flex items-center bg-american-blue-200 text-white text-[0.8125rem] md:text-sm rounded-lg"
         onClick={handleMenu}
       >
         <span className="font-normal">Sort By:</span>
         <span className="font-bold ml-1 capitalize">{selectedMenuOption}</span>
-        <AnimatedDropdownIcon animate={animate} />
+        <span className="mt-1 ml-[2px] md:ml-1">
+          <AnimatedDropdownIcon animate={animate} />
+        </span>
       </button>
       {renderDropdownList()}
     </div>

@@ -6,7 +6,7 @@ import { sortBy } from "../../constants";
 
 const CreateFeedbackBar: React.FC = () => {
   return (
-    <div className="w-full z-40 sticky top-[82.5px] md:top-20">
+    <div className="w-full z-40 sticky top-[82.5px] md:top-72 lg:top-20">
       <div className="flex items-center justify-between px-3 gap-2 min-h-[5rem] max-h-[5rem] bg-american-blue-200 md:p-6 md:rounded-lg">
         <div className="flex gap-4 items-center">
           <BlubIcon className="hidden md:inline-block" />

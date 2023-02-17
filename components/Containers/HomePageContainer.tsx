@@ -8,7 +8,7 @@ import TagsCard from "../TagsCard/TagsCard";
 const HomePageContainer: React.FC = () => {
   return (
     <div className="w-full mx-auto flex flex-col md:mt-20 md:gap-8 md:w-[90%] lg:max-w-5xl lg:w-full lg:flex-row">
-      <div className="hidden lg:max-h-[30rem] sticky md:top-20 md:flex md:flex-row md:justify-between md:gap-3 lg:flex-col lg:gap-5">
+      <div className="hidden z-40 lg:max-h-[30rem] sticky md:top-20 md:flex md:flex-row md:justify-between md:gap-3 lg:flex-col lg:gap-5">
         <FeedbackLogo />
         <TagsCard />
         <RoadmapCard />
