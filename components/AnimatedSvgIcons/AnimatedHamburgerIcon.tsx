@@ -12,7 +12,7 @@ const hamburgerVariant = {
     rotate: 0,
     transition: {
       type: "tween",
-      duration: 0.5,
+      duration: 0.4,
     },
   },
   final: {
@@ -21,7 +21,7 @@ const hamburgerVariant = {
     d: "M15.01.368l2.122 2.122-6.01 6.01 6.01 6.01-2.122 2.122L9 10.622l-6.01 6.01L.868 14.51 6.88 8.5.87 2.49 2.988.368 9 6.38 15.01.37z",
     transition: {
       type: "tween",
-      duration: 0.5,
+      duration: 0.4,
     },
   },
 };

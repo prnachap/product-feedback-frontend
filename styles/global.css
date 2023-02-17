@@ -5,6 +5,7 @@
 @layer base {
   body {
     font-family: "Jost", sans-serif;
+    @apply text-[13px] md:text-base font-normal tracking-normal text-dark-blue-gray;
     background: theme(colors.ghost-white);
   }
   h1 {
@@ -14,7 +15,7 @@
     @apply text-xl tracking-tighter font-bold;
   }
   h3 {
-    @apply text-lg tracking-tighter font-bold;
+    @apply text-[13px] md:text-lg tracking-tighter font-bold;
   }
   h4 {
     @apply text-sm tracking-tighter font-bold;
@@ -26,16 +27,16 @@
     @apply text-[0.8125rem] font-bold px-[52px] py-2 md:text-sm;
   }
   .btn-primary {
-    @apply btn-base bg-purple-1000 rounded-lg text-white hover:bg-purple-light transition-all;
+    @apply btn-base bg-purple-1000 rounded-lg text-white hover:bg-purple-light transition-all ease-in;
   }
   .btn-secondary {
-    @apply btn-base bg-indigo-1000 rounded-lg text-white hover:bg-indigo-light transition-all;
+    @apply btn-base bg-indigo-1000 rounded-lg text-white hover:bg-indigo-light transition-all ease-in;
   }
   .btn-tertiary {
-    @apply btn-base bg-american-blue-100 rounded-lg text-white hover:bg-american-blue-light transition-all;
+    @apply btn-base bg-american-blue-100 rounded-lg text-white hover:bg-american-blue-light transition-all ease-in;
   }
   .btn-danger {
-    @apply btn-base bg-jasper rounded-lg text-white hover:bg-jasper-light transition-all;
+    @apply btn-base bg-jasper rounded-lg text-white hover:bg-jasper-light transition-all ease-in;
   }
   .btn-back-primary {
     @apply btn-base flex items-center bg-transparent hover:underline text-dark-blue-gray border-none;
