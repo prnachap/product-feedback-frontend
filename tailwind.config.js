@@ -4,6 +4,7 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
+  important: "#__next",
   theme: {
     extend: {
       colors: {
@@ -22,6 +23,7 @@ module.exports = {
         "american-blue-light": "#656EA3",
         jasper: "#D73737",
         "jasper-light": "#E98888",
+        "cool-grey": "#8C92B3",
       },
     },
   },

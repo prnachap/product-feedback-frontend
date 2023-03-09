@@ -4,21 +4,21 @@
 
 @layer base {
   body {
-    font-family: "Jost", sans-serif;
+    font-family: "Jost", sans-serif !important;
     @apply text-[13px] md:text-base font-normal tracking-normal text-dark-blue-gray;
     background: theme(colors.ghost-white);
   }
   h1 {
-    @apply text-2xl tracking-tighter font-bold;
+    @apply text-lg md:text-2xl tracking-tighter font-bold;
   }
   h2 {
     @apply text-xl tracking-tighter font-bold;
   }
   h3 {
-    @apply text-[13px] md:text-lg tracking-tighter font-bold;
+    @apply text-[0.8125rem] md:text-lg tracking-tighter font-bold;
   }
   h4 {
-    @apply text-sm tracking-tighter font-bold;
+    @apply text-[0.8125rem]  md:text-sm tracking-tighter font-bold;
   }
 }
 
@@ -53,7 +53,7 @@
   }
 
   .body-one-text {
-    @apply text-base font-normal tracking-normal;
+    @apply text-[0.8125rem] md:text-base font-normal tracking-normal;
   }
 
   .body-two-text {
@@ -61,5 +61,37 @@
   }
   .body-three-text {
     @apply text-[13px] font-semibold tracking-normal;
+  }
+  .primary-text {
+    @apply text-lg md:text-2xl tracking-tighter font-bold;
+  }
+  .secondary-text {
+    @apply text-xl tracking-tighter font-bold;
+  }
+  .tertiary-text {
+    @apply text-[0.8125rem] md:text-lg tracking-tighter font-bold;
+  }
+  .quaternary-text {
+    @apply text-[0.8125rem]  md:text-sm tracking-tighter font-bold;
+  }
+  .body-text {
+    @apply text-[13px] md:text-base font-normal tracking-normal text-dark-blue-gray;
+  }
+  .border-color-inprogress {
+    @apply border-purple-1000;
+  }
+  .border-color-live {
+    @apply border-maya-blue;
+  }
+  .border-color-planned {
+    @apply border-vivid-tangerine;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
 }

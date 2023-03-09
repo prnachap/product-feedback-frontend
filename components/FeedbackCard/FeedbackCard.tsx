@@ -12,7 +12,7 @@ const FeedbackCard: React.FC<FeedbackType> = ({
 }) => {
   return (
     <div className="relative bg-white px-8 py-6 rounded-lg grid grid-cols-[3fr,1fr] md:grid-cols-[50px_3fr_100px] items-center gap-4 md:gap-10">
-      <Chip className="gap-2 body-three-text self-start justify-self-start md:justify-self-auto">
+      <Chip className="gap-2 body-three-text flex-col justify-center items-center self-start justify-self-start md:justify-self-auto">
         <ArrowUpIcon className="mt-2" />
         <span>{upVotes}</span>
       </Chip>

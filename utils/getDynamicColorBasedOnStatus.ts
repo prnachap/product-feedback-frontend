@@ -1,10 +1,14 @@
-export const getDynamicColorBasedOnStatus = ({ name }: { name: string }) => {
-  switch (name?.toLowerCase()) {
+export const getDynamicColorClassBasedOnStatus = ({
+  name,
+}: {
+  name: FeedbackType["status"];
+}) => {
+  switch (name) {
     case "planned":
-      return "bg-vivid-tangerine";
+      return "border-color-planned";
     case "in-progress":
-      return "bg-purple-1000";
+      return "border-color-inprogress";
     case "live":
-      return "bg-maya-blue";
+      return "border-color-live";
   }
 };

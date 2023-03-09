@@ -11,7 +11,7 @@ const Chip: React.FunctionComponent<ChipProps> = ({
 }) => {
   return (
     <button
-      className={`flex flex-col justify-center items-center py-1 px-4 rounded-md bg-alice-blue text-[0.8125rem] md:text-sm text-indigo-1000 font-semibold hover:bg-lavender-blue   focus:bg-indigo-1000 focus:text-white transition-all ease-in ${className}`}
+      className={`flex py-1 px-4 rounded-md bg-alice-blue text-[0.8125rem] md:text-sm text-indigo-1000 font-semibold hover:bg-lavender-blue   focus:bg-indigo-1000 focus:text-white transition-all ease-in ${className}`}
       onClick={handleClick}
     >
       {children}

@@ -9,4 +9,5 @@ type FeedbackType = {
   category: string;
   upVotes: number;
   comments: number;
+  status: "planned" | "in-progress" | "live";
 };
