@@ -1,3 +1,4 @@
+import { Box, Typography } from "@mui/material";
 import { AnimatePresence } from "framer-motion";
 import { Fragment, useState } from "react";
 import AnimatedHamburgerIcon from "../AnimatedSvgIcons/AnimatedHamburgerIcon";
@@ -23,18 +24,20 @@ const NavbarMobile: React.FC = () => {
   };
 
   return (
-    <div className="sticky top-0 z-30">
-      <div className="bg-gradient-to-r from-purple-500 to-pink-500 w-full max-w-none px-3 py-4 flex justify-between items-center relative z-50 md:hidden">
-        <div>
-          <h2 className="text-white">Frontend Mentor</h2>
+    <Box className="sticky top-0 z-30">
+      <Box className="bg-gradient-to-r from-purple-500 to-pink-500 w-full max-w-none px-3 py-4 flex justify-between items-center relative z-50 md:hidden">
+        <Box>
+          <Typography variant="h2" className="secondary-text text-white">
+            Frontend Mentor
+          </Typography>
           <span className="body-two-text text-white">Feedback board</span>
-        </div>
-        <div onClick={handleSideBar}>
+        </Box>
+        <Box onClick={handleSideBar}>
           <AnimatedHamburgerIcon animate={"animate"} />
-        </div>
-      </div>
+        </Box>
+      </Box>
       {renderSidebar()}
-    </div>
+    </Box>
   );
 };
 

@@ -1,3 +1,4 @@
+import { Box } from "@mui/material";
 import { useField } from "formik";
 import { AnimatePresence } from "framer-motion";
 import { isEmpty } from "lodash";
@@ -45,7 +46,7 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
   }  transition-all`;
 
   return (
-    <div ref={ref}>
+    <Box ref={ref}>
       <label htmlFor={label} className="input-label">
         {label}
       </label>
@@ -67,7 +68,7 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
           />
         )}
       </AnimatePresence>
-    </div>
+    </Box>
   );
 };
 

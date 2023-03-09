@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import RoadmapCard from "../RoadmapCard/RoadmapCard";
 import TagsCard from "../TagsCard/TagsCard";
+import { Box } from "@mui/material";
 
 const sidebarVariants = {
   initial: {
@@ -33,10 +34,10 @@ const Sidebar: React.FC = () => {
       exit="exit"
       variants={sidebarVariants}
     >
-      <div className="flex flex-col gap-6 px-6 pt-6">
+      <Box className="flex flex-col gap-6 px-6 pt-6">
         <TagsCard />
         <RoadmapCard />
-      </div>
+      </Box>
     </motion.div>
   );
 };

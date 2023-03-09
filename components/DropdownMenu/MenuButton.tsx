@@ -1,3 +1,4 @@
+import { Box } from "@mui/material";
 import { AnimatePresence } from "framer-motion";
 import React, { useState, useRef } from "react";
 import { useClickOutside } from "../../hooks/useClickOutside";
@@ -44,7 +45,7 @@ function SortByDropdown<T extends string | number>({
   };
 
   return (
-    <div className="relative" ref={dropdownRef}>
+    <Box className="relative" ref={dropdownRef}>
       <button
         className="flex items-center bg-american-blue-200 text-white text-[0.8125rem] md:text-sm rounded-lg"
         onClick={handleMenu}
@@ -56,7 +57,7 @@ function SortByDropdown<T extends string | number>({
         </span>
       </button>
       {renderDropdownList()}
-    </div>
+    </Box>
   );
 }
 

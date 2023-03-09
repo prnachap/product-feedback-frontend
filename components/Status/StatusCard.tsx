@@ -1,8 +1,8 @@
 import { Box, Typography } from "@mui/material";
+import { isEqual } from "lodash";
 import React from "react";
 import ArrowUpIcon from "../../public/assets/shared/icon-arrow-up.svg";
 import CommentIcon from "../../public/assets/shared/icon-comments.svg";
-import { getDynamicColorClassBasedOnStatus } from "../../utils/getDynamicColorBasedOnStatus";
 import Chip from "../Chip/Chip";
 import Status from "./Status";
 
@@ -16,7 +16,11 @@ const StatusCard: React.FC<StatusCardProps> = ({
   comments,
   status,
 }) => {
-  const borderClassNames = getDynamicColorClassBasedOnStatus({ name: status });
+  const borderClassNames = isEqual(status, "in-progress")
+    ? "border-color-inprogress"
+    : isEqual(status, "planned")
+    ? "border-color-planned"
+    : "border-color-live";
 
   return (
     <Box className={`p-8 bg-white rounded-lg border-t-8 ${borderClassNames}`}>

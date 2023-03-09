@@ -1,3 +1,4 @@
+import { Box } from "@mui/material";
 import { statusTags } from "../../constants";
 import Chip from "../Chip/Chip";
 
@@ -9,9 +10,9 @@ const TagsCard: React.FC = () => {
   };
 
   return (
-    <div className="bg-white w-[15.9375rem] max-w-[15.9375rem] p-6 flex flex-wrap gap-2 rounded-lg">
+    <Box className="bg-white w-[15.9375rem] max-w-[15.9375rem] p-6 flex flex-wrap gap-2 rounded-lg">
       {renderTags()}
-    </div>
+    </Box>
   );
 };
 
