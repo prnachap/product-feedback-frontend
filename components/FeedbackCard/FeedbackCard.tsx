@@ -18,13 +18,16 @@ const FeedbackCard: React.FC<FeedbackType> = ({
         <span>{upVotes}</span>
       </Chip>
       <Box className="flex flex-col col-span-full row-span-full  md:col-auto md:row-auto justify-center items-start gap-1">
-        <Typography variant="h3" className="tertiary-text">
+        <Typography
+          variant="h3"
+          className="tertiary-text hover:text-indigo-1000 transition-all ease-in-out cursor-pointer"
+        >
           {title}
         </Typography>
         <Typography variant="body1" className="body-text">
           {description}
         </Typography>
-        <Chip className="mt-2">{category}</Chip>
+        <Chip className="mt-2 pointer-events-none">{category}</Chip>
       </Box>
       <Box className="flex items-center gap-2 justify-self-end">
         <CommentIcon />
